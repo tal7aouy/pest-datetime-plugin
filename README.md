@@ -20,8 +20,7 @@ composer require tal7aouy/pest-datetime-plugin
 use Carbon\Carbon;
 
 test('Check if date is today', function (): void {
-    $now = Carbon::now();
-    expect(new Tal7aouy\PestDateTime\Expectation($now))->toBeToday();
+    expect(Carbon::now())->toBeToday();
 });
 ```
 
