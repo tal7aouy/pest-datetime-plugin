@@ -1,0 +1,8 @@
+parameters:
+    level: max
+    paths:
+        - src
+
+    ignoreErrors:
+        - "#Undefined variable: \\$this#"
+        - "#should return Pest\\\\Expectation<TValue> but returns Pest\\\\Mixins\\\\Expectation#"

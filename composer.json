@@ -1,0 +1,68 @@
+{
+    "name": "tal7aouy/pest-datetime-plugin",
+    "description": "📅 A lightweight DateTime plugin for Pest PHP testing framework, with fluent assertions using Carbon.",
+    "keywords": [
+        "php",
+        "framework",
+        "pest",
+        "unit",
+        "test",
+        "testing",
+        "plugin",
+        "DateTime"
+    ],
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Tal7aouy\\PestDateTime\\": "src/"
+        },
+        "files": [
+            "src/Autoload.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "tal7aouy",
+            "email": "tal7aouy.dev@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "nesbot/carbon": "^3.6",
+        "pestphp/pest-plugin": "^2.1"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.16.1",
+        "pestphp/pest": "^2.34",
+        "phpstan/phpstan": "^1.11.6",
+        "rector/rector": "^1.2.0"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true,
+        "preferred-install": "dist",
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "scripts": {
+        "refactor": "rector",
+        "lint": "pint",
+        "test:refactor": "rector --dry-run",
+        "test:lint": "pint --test",
+        "test:types": "phpstan analyse --ansi",
+        "test:unit": "pest --colors=always",
+        "test": [
+            "@test:refactor",
+            "@test:lint",
+            "@test:types",
+            "@test:unit"
+        ]
+    }
+}
